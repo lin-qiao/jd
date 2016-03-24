@@ -1832,12 +1832,14 @@ word-break: break-all;
 	padding: 20px 0;
 	margin-bottom: 14px;
 	background: #F5F5F5;
+	text-align: center;
 
 }
 .slogen li{
-	width: 220px;
+	width: 320px;
 	float: left;
-	padding-left: 82px;
+	text-align: center;
+	
 }
 .bottom_fore{
 	width: 1210px;
