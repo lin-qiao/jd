@@ -1,4 +1,3 @@
-$(function(){
 
 //banner轮播
 var win=$(".banner_1")[0];
@@ -74,34 +73,137 @@ function moveL(){
 
 //////////////////////////////////////////////////
 
+
+var lunbo=function(win){
+var imgs=win.firstElementChild.children;
+var rou=$(".f1_slider",win);
+var harfL=$(".f1_harfL",win)[0];  
+var harfR=$(".f1_harfR",win)[0];
+var num=0;
+var flag=true;   //解决轮播快速显示bug 
+var index=0;
+var imgsW=parseInt(getStyle(imgs[0],"width"));  //获取图片宽度
+for(var i=0; i<imgs.length;i++){  
+	imgs[i].style.left=imgsW+"px";
+}
+imgs[0].style.left=0+"px"               //让第一张图片显示
+rou[0].style.background='#b61b1f';    //第一个按钮显示
+
+var t=setInterval(movef1R,3000);
+win.onmouseover=function(){
+	clearInterval(t);
+	harfR.style.display="block";
+	harfL.style.display="block";
+}
+win.onmouseout=function(){
+	t=setInterval(movef1R,3000);
+	harfR.style.display="none";
+	harfL.style.display="none";
+}
+for(var i=0; i<rou.length;i++){     //for
+  rou[i].index=i;              //用rou[i]的index来储存i的值
+  rou[i].onclick=function(){
+    for(var i=0; i<rou.length;i++){        //for让所有的rou圆变为灰色
+    	rou[i].style.background='#3e3e3e'; 
+    }
+    rou[this.index].style.background='#b61b1f';    //让点击的圆（index）变为红色
+    imgs[this.index].style.left=imgsW+"px";         //让点击要出现的图片准备好
+    animate(imgs[index],{left:-imgsW},400,Tween.Quart.easeIn );       //让当前index图片移出
+    animate(imgs[this.index],{left:0},400,Tween.Quart.easeIn);        //让num图片进入
+    index=num=this.index;                    // 点击后num index 都为当前this.index
+}
+}
+
+harfL.onclick=function(){
+	movef1L();
+}
+harfR.onclick=function(){
+	movef1R();
+}
+
+function movef1R(){
+  if(!flag){    //  如果为假 证明门还是关的，直接返回 等执行完之后再处理
+    return;     // 如果为真，证明函数已经执行完，可以进入
+}
+flag=false;       //进入后改为false 也就是把门关上
+num++;    
+if(num==imgs.length){    
+	num=0;
+}
+  imgs[num].style.left=-imgsW+"px";  //让下一张图片到位准备轮播
+  animate(imgs[index],{left:imgsW},400,Tween.Quart.easeIn,function(){  //让当前index图片移出
+    flag=true;                  //利用回调函数返回true 证明门已开    
+});
+  animate(imgs[num],{left:0},400,Tween.Quart.easeIn,function(){   //让num图片进入
+  	flag=true;
+  });
+  for(var i=0; i<imgs.length;i++){
+      rou[i].style.background='#3e3e3e';   //for使圆都变灰
+  }
+    rou[num].style.background='#b61b1f';  //让num图片，也就是当前图片变色
+  index=num;           //因为num图片已经进入，所以num赋值给Index
+
+}
+function movef1L(){
+	if(!flag){
+		return;
+	}
+flag=false;       //解决轮播快速显示bug
+num--;    
+if(num<0){    
+	num=imgs.length-1;
+}
+  imgs[num].style.left=imgsW+"px";  //让下一张图片到位准备轮播
+  animate(imgs[index],{left:-imgsW},400,Tween.Quart.easeIn,function(){  //让当前index图片移出
+  	flag=true;         
+  });
+  animate(imgs[num],{left:0},400,Tween.Quart.easeIn,function(){   //让num图片进入
+  	flag=true;
+  });
+  for(var i=0; i<imgs.length;i++){
+      rou[i].style.background='#3e3e3e';   //for使圆都变灰
+  }
+    rou[num].style.background='#b61b1f';  //让num图片，也就是当前图片变色
+  index=num;           //因为num图片已经进入，所以num赋值给Index
+
+}
+
+}
 //1F轮播
-// var bans1=$(".f1_banner")[0];
-// var imgs1=$(".f1_pane");
-// var rans1=$(".f1_slider");
-// var imgs1W=parseInt(getStyle(imgs1[0],"width"));
-// var index=0;
-// for(var i=0;i<imgs1.length;i++){
-//    imgs1[i].style.left=imgs1W+"px";
-// }
-// imgs1[0].style.left=0+"px";
-// rans1[0].style.background="#b61b1f";
-// var t1=setInterval(move1,1000);
-// function move1(){
-// 	if(!flag){
-// 		return;
-// 	}
-// 	flag=false;
-// 	num++;
-// 	if(num==imgs.length){
-// 		num=0;
-// 	}
-// 	imgs1[num].style.left=imgs1W+"px"
-// }
+var win1f=$(".f1_banner")[0]    
+lunbo(win1f);
 
+//2f轮播
+var win2f=$('.ghmz_centra')[0];
+lunbo(win2f);
 
+//3f轮播
+var win3f=$('.sliderBan')[0];
+lunbo(win3f);
 
+//4f轮播
+var win4f=$('.sliderBanf4')[0];
+lunbo(win4f);
 
+//5f轮播
+var win5f=$('.sliderBanf5')[0];
+lunbo(win5f);
 
-})
+//6f 轮播
+var win6f=$('.f6_banner')[0];
+lunbo(win6f);
 
+//7f 轮播
+var win7f=$('.f7_banner')[0];
+lunbo(win7f);
 
+var win8f=$('.f8_banner')[0];
+lunbo(win8f);
+
+var win9f=$('.f9_banner')[0];
+lunbo(win9f);
+var win10f=$('.sliderBanf10')[0];
+lunbo(win10f);
+
+var win11f=$('.sliderBanf11B')[0];
+lunbo(win11f);

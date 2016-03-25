@@ -125,6 +125,7 @@ line-height: 30px;
 .top_img{
 	width: 1210px;
 	height: 80px;
+	background:red;
 	margin: 0px auto;
 	position: relative;
 
@@ -321,6 +322,7 @@ font: 400 14px/31px "微软雅黑";
 .banner_1{
 	width: 730px;
 	height: 454px;
+	background: blue;
 	float: left;
 	margin: 12px 10px 0 10px;
 	position: relative;
@@ -463,6 +465,7 @@ font: 400 14px/31px "微软雅黑";
 .cl_left{
 	width: 25px;
 	height: 25px;
+	background:red;
 	position: absolute;
 	top: 13px;
 	right:18px;
@@ -943,6 +946,39 @@ font: 400 14px/31px "微软雅黑";
 	float: left;
 	background: #3e3e3e;
 	margin: 0px 4px;
+	cursor: pointer;
+}
+.f1_harfL{
+	width: 28px;
+	height: 62px;
+	line-height: 62px;
+	text-align: center;
+	position: absolute;
+	top: 122px;
+	left: 0px;
+	background: rgba(0,0,0,0.2);
+	font-family: "宋体";
+	font-size: 25px;
+	color: #FFF;
+	z-index: 99;
+/*	display: none;*/
+	cursor: pointer;
+}
+.f1_harfR{
+	width: 28px;
+	height: 62px;
+	line-height: 62px;
+	text-align: center;
+	position: absolute;
+	top: 122px;
+	right: 0px;
+	background: rgba(0,0,0,0.2);
+	font-family: "宋体";
+	font-size: 25px;
+	color: #FFF;
+	z-index: 99;
+/*	display: none;*/
+	cursor: pointer;
 }
 .ebap_right div{
 	width: 220px;
@@ -982,10 +1018,16 @@ font: 400 14px/31px "微软雅黑";
 	font-size: 0;
 
 }
+.ghmz_centraB li{
+	position: absolute;
+
+}
 .ghmz_centra{
 	width: 340px;
 	height: 474px;
 	float: left;
+	position: relative;
+	overflow: hidden;
 }
 .ghmz_right{
 	width: 660px;
@@ -1183,6 +1225,20 @@ font: 400 14px/31px "微软雅黑";
 	height: 474px;
 	float: left;
 }
+.sliderBan{
+	width: 439px;
+	height: 236px;
+	overflow: hidden;
+	border-right: 1px solid #EDEDED;
+	position: relative;
+
+}
+
+.sliderBanU li{
+	width: 439px;
+	height: 236px;
+	position: absolute;
+}
 .slider a{
 	display: block;
     float: left;
@@ -1335,10 +1391,57 @@ font: 400 14px/31px "微软雅黑";
 #themes_fore4f{
 	background: url(../image/electronicsicon.png) no-repeat 0px -26px;
 }
+/*4*/
+.sliderBanf4{
+	width: 439px;
+	height: 236px;
+	overflow: hidden;
+	border-right: 1px solid #EDEDED;
+	position: relative;
 
+}
+
+.sliderBanUf4 li{
+	width: 439px;
+	height: 236px;
+	position: absolute;
+}
+.sliderf4 a{
+	display: block;
+    float: left;
+}
+.htcf4{
+	border-right: 1px solid #EDEDED;
+	border-bottom: 1px solid #EDEDED;
+	height: 238px;
+	float: left;
+}
 /*5*/
 
+.sliderBanf5{
+	width: 439px;
+	height: 236px;
+	overflow: hidden;
+	border-right: 1px solid #EDEDED;
+	position: relative;
 
+}
+
+.sliderBanUf5 li{
+	width: 439px;
+	height: 236px;
+	position: absolute;
+}
+.sliderf5 a{
+	display: block;
+    float: left;
+}
+.htcf5{
+	border-right: 1px solid #EDEDED;
+	border-bottom: 1px solid #EDEDED;
+	height: 238px;
+	float: left;
+}
 .themes_foref5{
 	display: block;
 	width: 120px;
@@ -1387,6 +1490,8 @@ font: 400 14px/31px "微软雅黑";
 	width: 340px;
 	height: 474px;
 	float: left;
+	position: relative;
+	overflow: hidden;
 }
 .f6_right{
 	width: 440px;
@@ -1417,7 +1522,18 @@ font: 400 14px/31px "微软雅黑";
 }
 
 /*7*/
-
+.f7_banner{
+	width: 340px;
+	height: 474px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.f7_banner a{
+	font-size: 0;
+	display: block;
+	border-bottom: 1px solid #EDEDED;
+}
 #f7_themes1{
 	background: url(../image/livingsicon.png) no-repeat 0px 0px;
 }
@@ -1434,6 +1550,18 @@ font: 400 14px/31px "微软雅黑";
 }
 
 /*8*/
+.f8_banner{
+	width: 340px;
+	height: 474px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.f8_banner a{
+	font-size: 0;
+	display: block;
+	border-bottom: 1px solid #EDEDED;
+}
 #f8_themes1{
 	background: url(../image/babysicon.png) no-repeat 0px 0px;
 }
@@ -1450,6 +1578,18 @@ font: 400 14px/31px "微软雅黑";
 }
 
 /*9*/
+.f9_banner{
+	width: 340px;
+	height: 474px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.f9_banner a{
+	font-size: 0;
+	display: block;
+	border-bottom: 1px solid #EDEDED;
+}
 #f9_themes1{
 	background: url(../image/foodsicon.png) no-repeat 0px 0px;
 }
@@ -1485,6 +1625,24 @@ font: 400 14px/31px "微软雅黑";
 	width: 440px;
 	height: 474px;
 	float: left;
+}
+.sliderBanf10{
+	width: 439px;
+	height: 236px;
+	overflow: hidden;
+	border-right: 1px solid #EDEDED;
+	position: relative;
+
+}
+
+.sliderBanUf10 li{
+	width: 439px;
+	height: 236px;
+	position: absolute;
+}
+.sliderf10 a{
+	display: block;
+    float: left;
 }
 .f10_banner1{
     width: 439px;
@@ -1540,7 +1698,7 @@ font: 400 14px/31px "微软雅黑";
 	padding: 2px 15px 0px 4px;
 	border-right: 1px dotted #E4E4E4;
 	overflow: hidden;
-		text-align: center;
+	text-align: center;
 
 }
 .f10_ing{
@@ -1665,6 +1823,23 @@ word-break: break-all;
 	width: 395px;
 	height: 237px;
 	float: left;
+}
+.sliderBanf11B{
+	width: 395px;
+	height: 236px;
+	overflow: hidden;
+	position: relative;
+
+}
+
+.sliderBanUf11B li{
+	width: 439px;
+	height: 236px;
+	position: absolute;
+}
+.sliderf11 a{
+	display: block;
+    float: left;
 }
 .main_bodyR{
 	display: block;
@@ -1832,14 +2007,18 @@ word-break: break-all;
 	padding: 20px 0;
 	margin-bottom: 14px;
 	background: #F5F5F5;
-	text-align: center;
+
+}
+.slogen ul{
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
 
 }
 .slogen li{
-	width: 320px;
+	width: 300px;
 	float: left;
 	text-align: center;
-	
 }
 .bottom_fore{
 	width: 1210px;
