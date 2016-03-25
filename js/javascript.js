@@ -202,8 +202,12 @@ lunbo(win8f);
 
 var win9f=$('.f9_banner')[0];
 lunbo(win9f);
+
 var win10f=$('.sliderBanf10')[0];
 lunbo(win10f);
 
-var win11f=$('.sliderBanf11B')[0];
+var win11f=$('.sliderBanf11')[0];
 lunbo(win11f);
+
+var win11fb=$('.sliderBanf11b')[0];
+lunbo(win11fb);

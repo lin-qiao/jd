@@ -1820,7 +1820,14 @@ word-break: break-all;
 	height: 237px;
 	float: left;
 }
-.sliderBanf11B{
+.sliderBanf11{
+	width: 395px;
+	height: 236px;
+	overflow: hidden;
+	position: relative;
+
+}
+.sliderBanf11b{
 	width: 395px;
 	height: 236px;
 	overflow: hidden;
@@ -1829,7 +1836,7 @@ word-break: break-all;
 }
 
 .sliderBanUf11 li{
-	width: 439px;
+	width: 395px;
 	height: 236px;
 	position: absolute;
 }
