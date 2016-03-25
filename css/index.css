@@ -125,7 +125,6 @@ line-height: 30px;
 .top_img{
 	width: 1210px;
 	height: 80px;
-	background:red;
 	margin: 0px auto;
 	position: relative;
 
@@ -322,11 +321,9 @@ font: 400 14px/31px "微软雅黑";
 .banner_1{
 	width: 730px;
 	height: 454px;
-	background: blue;
 	float: left;
 	margin: 12px 10px 0 10px;
 	position: relative;
-
 }
 .slider_pane{
 	display: block;
@@ -465,7 +462,6 @@ font: 400 14px/31px "微软雅黑";
 .cl_left{
 	width: 25px;
 	height: 25px;
-	background:red;
 	position: absolute;
 	top: 13px;
 	right:18px;
@@ -1832,7 +1828,7 @@ word-break: break-all;
 
 }
 
-.sliderBanUf11B li{
+.sliderBanUf11 li{
 	width: 439px;
 	height: 236px;
 	position: absolute;
