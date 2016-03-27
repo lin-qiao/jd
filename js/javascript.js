@@ -273,3 +273,6 @@ tab(frg,downg);
 var frk=$('.fr_wdjd')[2];
 var downk=$('.dorpdown_kf')[0];
 tab(frk,downk);
+var frz=$('.fr_wdjd')[3];
+var downz=$('.dorpdown_wz')[0];
+tab(frz,downz);
