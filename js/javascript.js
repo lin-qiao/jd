@@ -211,3 +211,65 @@ lunbo(win11f);
 
 var win11fb=$('.sliderBanf11b')[0];
 lunbo(win11fb);
+
+
+//节点轮播
+var wintt=$('.special_sd')[0];
+var boxtt=$('.special_sdU')[0];
+var imgstt=boxtt.children;
+var imgsttH=imgstt[0].offsetHeight;
+var time=setInterval(fn,5000);
+function fn(){
+	for(var i=0;i<2;i++){
+		boxtt.insertBefore(boxtt.lastElementChild,boxtt.firstElementChild);
+	}
+	boxtt.style.top=-2*imgsttH+35+'px';
+	animate(boxtt,{top:35},Tween.Linear);
+}
+
+//右浮动窗口
+
+
+
+var cl=$('.f1')[0];
+var down=$('.dorpdown')[0];
+var tab=function(obj,down){
+	obj.onmouseover=function(){
+		obj.id='f1b';
+		down.style.display="block";
+	}
+	obj.onmouseout=function(){
+		obj.id='';
+		down.style.display='none';
+	}
+}
+tab(cl,down);
+
+var frw=$('.fr_wdjd')[0];
+var downw=$('.fr_wdjd_down')[0];
+tab(frw,downw);
+
+var frs=$('.fr_sj')[0];
+var downs=$('.dorpdown_sj')[0];
+var gh=$('.fr_icons',frs)[0];
+	frs.onmouseover=function(){
+		frs.id='sj';
+		gh.style.right='7px'
+		downs.style.display="block";
+		frs.style.padding="0 24px";
+	}
+	frs.onmouseout=function(){
+		gh.style.right='8px'
+		frs.id='';
+		downs.style.display='none';
+		frs.style.padding="0 25px";
+	}
+
+
+var frg=$('.fr_wdjd')[1];
+var downg=$('.gz-dorpdown')[0];
+tab(frg,downg);
+
+var frk=$('.fr_wdjd')[2];
+var downk=$('.dorpdown_kf')[0];
+tab(frk,downk);
