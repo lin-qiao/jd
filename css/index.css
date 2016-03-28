@@ -456,15 +456,53 @@ color: #666;
 	height: 34px;
 	padding:0 28px 0 36px;
 	 background: #F9F9F9;
-	 border: 1px solid #DFDFDF;
+	 border: 1px solid #ddd;
 	 font: 12px Arial,Verdana,"宋体";
 	 line-height:34px;
 	 background-image: url(../image/jd2015img.png);
 	 background-repeat: no-repeat;
 	 background-position: 13px -49px;
+	 position: relative;
 
 
 
+}
+.cw_iconi{
+	background-color: #FFF;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.cw_spacer{
+	width: 139px;
+	height: 10px;
+	background-color: #FFF;
+	position: absolute;
+	right: 0px;
+	top:-5px;
+}
+.prompt{
+	width: 278px;
+	height: 49px;
+	padding: 10px 15px;
+	position: absolute;
+	top:34px;
+	right: -1px;
+	border: 1px solid #DDD;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+	display: none;
+
+}
+.nogoods{
+	padding-left: 30px;
+	height: 49px;
+	line-height: 49px;
+	color:#999;
+	font-size: "宋体";
+}
+.nogoods b{
+	width:56px;
+	height: 49px;
+	background: url(../image/settleup-nogoods.png);
+	float: left;
 }
 .cw_icon a:hover{
     color:  #C81623;
@@ -2470,14 +2508,14 @@ word-break: break-all;
     z-index: 0;
     
 }
-.floor{
+.floor1{
 	width: 30px;
 	height: 319px;
 	position: fixed;
 	left: 10px;
 	top: 0px;
 }
-.floor li{
+.floor1 li{
 width: 30px;
 height: 30px;
 line-height: 30px;

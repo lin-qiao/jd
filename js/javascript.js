@@ -276,12 +276,27 @@ tab(frk,downk);
 var frz=$('.fr_wdjd')[3];
 var downz=$('.dorpdown_wz')[0];
 tab(frz,downz);
+//购物车
+var cw=$('.cw_icon')[0];
+var downc=$('.prompt')[0];
+cw.onmouseover=function(){
+		cw.className="cw_icon cw_iconi";
+		downc.style.display="block";
+	}
+	cw.onmouseout=function(){
+
+		cw.className="cw_icon";
+		downc.style.display='none';
+	}
+
 
 //楼层跳转
 
-var floor=$(".floor")[0];
+var floor=$(".floor1")[0];
+var lis=$("li",floor);
 var fs=$('.floors');
 var et=$('.etitle');
+var st=$(".floor");
 var fH=floor.offsetHeight;
 var pH=document.documentElement.clientHeight;
 floor.style.top=(pH-fH)/2+"px";
@@ -289,4 +304,65 @@ window.onresize=function(){
 fH=floor.offsetHeight;
 pH=document.documentElement.clientHeight;
 floor.style.top=(pH-fH)/2+"px";	
+}
+var floorarr=[];
+for(var i=0;i<st.length;i++){
+	floorarr.push(st[i].offsetTop);
+}
+var kaiguan=true;
+for(var i=0; i<lis.length;i++){
+	lis[i].index=i;
+	lis[i].onmouseover=function(){
+		for(var j=0; j<lis.length;j++){
+		// fs[j].style.display="block";
+		et[j].style.display="none";
+		et[j].style.background="";
+		et[j].style.color="";
+		}
+		// fs[this.index].style.display="none";
+		et[this.index].style.display="block";
+		et[this.index].style.background="#c81623";
+		et[this.index].style.color="#FFF";
+	}
+	lis[i].onmouseout=function(){
+		for(var j=0; j<lis.length;j++){
+		fs[j].style.display="block";
+		et[j].style.display="none";
+		et[j].style.background="";
+		et[j].style.color="";
+		}
+	}
+	lis[i].onclick=function(){
+		kaiguan=false;
+		animate(document.body,{scrollTop:floorarr[this.index]},function(){
+			kaiguan=true;
+		});
+		animate(document.documentElement,{scrollTop:floorarr[this.index]},function(){
+			kaiguan=true;
+		});
+		for(var j=0;j<lis.length;j++){
+			fs[j].style.display="block";
+			et[j].style.display="none";
+		}
+		fs[this.index].style.display="none";
+		et[this.index].style.display="block";
+
+	}
+}
+window.onscroll=function(){
+	if(!kaiguan){
+          return;
+	}
+	var obj=document.body.scrollTop?document.body:document.documentElement //三元判断火狐和谷歌
+    var tops=obj.scrollTop;  
+	for(var i=0;i<st.length;i++){
+		if(tops+pH>=floorarr[i]+100){
+			for(var j=0;j<st.length;j++){
+				fs[j].style.display="block";
+				et[j].style.display="none";
+			}
+			fs[i].style.display="none";
+			et[i].style.display="block";
+		}
+	}
 }
