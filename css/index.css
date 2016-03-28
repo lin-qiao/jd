@@ -2470,3 +2470,42 @@ word-break: break-all;
     z-index: 0;
     
 }
+.floor{
+	width: 30px;
+	height: 319px;
+	position: fixed;
+	left: 10px;
+	top: 0px;
+}
+.floor li{
+width: 30px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+overflow: hidden;
+margin-top: -1px;
+cursor: pointer;
+position: relative;
+background: url(../image/index.png) no-repeat 0 0 ;
+
+}
+.floors{
+display: block;
+width: 30px;
+height: 30px;
+margin: 0px auto;
+color: #625351;
+font-size: 14px;
+font-family: Arial;
+
+}
+.etitle{
+	width: 30px;
+    height: 30px;
+	display: block;
+	color: #C81623;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}

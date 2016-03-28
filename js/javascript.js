@@ -230,7 +230,7 @@ function fn(){
 //右浮动窗口
 
 
-
+//tab 选项卡
 var cl=$('.f1')[0];
 var down=$('.dorpdown')[0];
 var tab=function(obj,down){
@@ -276,3 +276,17 @@ tab(frk,downk);
 var frz=$('.fr_wdjd')[3];
 var downz=$('.dorpdown_wz')[0];
 tab(frz,downz);
+
+//楼层跳转
+
+var floor=$(".floor")[0];
+var fs=$('.floors');
+var et=$('.etitle');
+var fH=floor.offsetHeight;
+var pH=document.documentElement.clientHeight;
+floor.style.top=(pH-fH)/2+"px";
+window.onresize=function(){
+fH=floor.offsetHeight;
+pH=document.documentElement.clientHeight;
+floor.style.top=(pH-fH)/2+"px";	
+}
