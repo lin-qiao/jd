@@ -601,14 +601,27 @@ color: #666;
 height: 466px;
 background: #C81623;
 float: left;
+position: relative;
 }
-.dd h3{
+.dd li{
 width: 210px;
 height: 31px;
 line-height: 31px;
 color: #fff;
 font: 400 14px/31px "微软雅黑";
 
+}
+.je_dorpdown{
+position: absolute;
+left: 209px;
+top: 0px;
+width: 990px;
+height: 464px;
+background: #f7f7f7;
+border: 1px solid #b61d1d;
+border-left: none;
+overflow: hidden;
+z-index: 999;
 }
 .dd a{
 	color: #fff;
