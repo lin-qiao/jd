@@ -250,18 +250,18 @@ var downw=$('.fr_wdjd_down')[0];
 tab(frw,downw);
 
 var frs=$('.fr_sj')[0];
-var downs=$('.dorpdown_sj')[0];
+var downss=$('.dorpdown_sj')[0];
 var gh=$('.fr_icons',frs)[0];
 	frs.onmouseover=function(){
 		frs.id='sj';
 		gh.style.right='7px'
-		downs.style.display="block";
+		downss.style.display="block";
 		frs.style.padding="0 24px";
 	}
 	frs.onmouseout=function(){
 		gh.style.right='8px'
 		frs.id='';
-		downs.style.display='none';
+		downss.style.display='none';
 		frs.style.padding="0 25px";
 	}
 
@@ -299,8 +299,13 @@ var et=$('.etitle');
 var st=$(".floor");
 var fH=floor.offsetHeight;
 var pH=document.documentElement.clientHeight;
-floor.style.top=(pH-fH)/2+"px";
+floor.style.top=(pH-319)/2+"px";
+var jdm=$('.jdm-toolbar-tabs')[0];
+var jH=jdm.offsetHeight;
+jdm.style.top=(pH-jH)/2+'px';
 window.onresize=function(){
+jH=jdm.offsetHeight;
+jdm.style.top=(pH-jH)/2+'px';
 fH=floor.offsetHeight;
 pH=document.documentElement.clientHeight;
 floor.style.top=(pH-fH)/2+"px";	
@@ -314,12 +319,10 @@ for(var i=0; i<lis.length;i++){
 	lis[i].index=i;
 	lis[i].onmouseover=function(){
 		for(var j=0; j<lis.length;j++){
-		// fs[j].style.display="block";
 		et[j].style.display="none";
 		et[j].style.background="";
 		et[j].style.color="";
 		}
-		// fs[this.index].style.display="none";
 		et[this.index].style.display="block";
 		et[this.index].style.background="#c81623";
 		et[this.index].style.color="#FFF";
@@ -349,6 +352,7 @@ for(var i=0; i<lis.length;i++){
 
 	}
 }
+var kg=true;
 window.onscroll=function(){
 	if(!kaiguan){
           return;
@@ -365,4 +369,59 @@ window.onscroll=function(){
 			et[i].style.display="block";
 		}
 	}
+	if(tops>floorarr[0]){
+		floor.style.display='block';
+		kg=false;
+	}else{
+		floor.style.display='none';
+		kg=true;
+	}
+}
+
+
+//左边导航栏
+
+var dd=$('.dd')[0];
+var dds=$('li',dd);
+var downs=$('.je_dorpdown');
+var itemas=$('.item-channels');
+for(var i=0;i<dds.length;i++){
+	dds[i].index=i;
+	dds[i].onmouseover=function(){
+		this.style.background='#f7f7f7';
+		downs[this.index].style.display='block';
+	}
+	dds[i].onmouseout=function(){
+		this.style.background='#C81623';
+		downs[this.index].style.display='none';
+	}
+}
+
+//右边导航栏
+var rigJ=$('li',jdm);
+var texts=$('.tab_text',jdm);
+for(var i=0; i<rigJ.length;i++){
+	rigJ[i].index=i;
+	rigJ[i].onmouseover=function(){
+		animate(texts[this.index],{left:-60},1);
+	}
+	rigJ[i].onmouseout=function(){
+		animate(texts[this.index],{left:0},1);
+	}
+}
+var jtf=$('.jdm-toolbar-footer')[0];
+var jli=$('li',jtf);
+var jtexts=$('.tab_text',jtf);
+for(var i=0;i<jli.length;i++){
+	jli[i].index=i;
+	jli[i].onmouseover=function(){
+		animate(jtexts[this.index],{left:-60},1);
+	}
+	jli[i].onmouseout=function(){
+		animate(jtexts[this.index],{left:0},1);
+	}
+}
+jli[0].onclick=function(){
+	var obj=document.body.scrollTop?document.body:document.documentElement;
+       obj.scrollTop=0;
 }

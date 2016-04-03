@@ -609,31 +609,148 @@ height: 31px;
 line-height: 31px;
 color: #fff;
 font: 400 14px/31px "微软雅黑";
+border-left: 1px solid #C81623;
+position: relative;
 
+}
+.dd li:hover h3 a{
+	color: #B61D1D;
+}
+.item-channels a:hover{
+  background: #C81623;
+}
+.item-channels a:hover i{
+background: #B1191A;
 }
 .je_dorpdown{
 position: absolute;
 left: 209px;
 top: 0px;
-width: 990px;
-height: 464px;
+width: 960px;
+height: 424px;
 background: #f7f7f7;
 border: 1px solid #b61d1d;
 border-left: none;
 overflow: hidden;
 z-index: 999;
-}
-.dd a{
-	color: #fff;
-	font: 400 14px/31px "微软雅黑";
-	display: block;
-	padding-left: 10px;
-	border-left:1px solid  #C81623;
+padding:20px;
+display: none;
 
 }
-.dd a:hover{
-	color:#C81623; 
-	background:#f7f7f7;
+.item-channels{
+	width: 790px;
+	height: 24px;
+	float: left;
+}
+.item-channels a{
+	display: inline-block;
+	height: 24px;
+	padding: 0 0 0 8px;
+	line-height: 24px;
+	color: #fff;
+	background: #7C7171;
+	float: left;
+	margin-right: 10px;
+	font-size: 10px;
+	position: relative;
+}
+.item-channels a i{
+    display: inline-block;
+    margin-left: 8px;
+    width: 23px;
+    height: 24px;
+    text-align: center;
+    font: 400 9px/24px consolas;
+    color: #fff;
+    background: #5c5251;
+
+}
+.item-brands,.item-promotions{
+	float: right;
+	width: 168px;
+	margin-bottom: 10px;
+}
+.item-promotions a{
+	height: 134px;
+		display: block;
+	    font-size: 0;
+	    margin-bottom: 1px;
+
+}
+.item-brands a{
+	height: 35px;
+	float:left;
+	margin-bottom: 1px;
+	margin-right: 1px;
+	display: block;
+	font-size: 0;
+}
+.subitems{
+	width:790px;
+	height: 409px;
+	padding-top: 6px;
+	float: left; 
+}
+.subitems dl{
+	width: 100%;
+	line-height: 2em;
+	overflow: hidden;
+
+}
+.subitems dt{
+	position: relative;
+	float: left;
+	width: 54px;
+	height: 24px;
+	padding: 8px 30px 0 0;
+	text-align: right;
+	font-weight: 700;
+}
+.subitems dt i{
+	position: absolute;
+	top:12px;
+	right: 18px;
+	width: 4px;
+	height: 14px;
+	font:400 9px/14px consolas;
+
+}
+.subitems dd{
+	float: left;
+	width: 620px;
+	padding: 6px 0;
+	border-top: 1px solid #eee;
+}
+.subitems dd a{
+	float:left;
+	padding: 0 8px;
+	margin: 4px 0;
+	line-height: 16px;
+	height: 16px;
+	border-left: 1px solid #e0e0e0;
+}
+.subitems a:hover{
+	color: #C81623;
+}
+.dd h3{
+	display: inline-block;
+	padding-left: 10px;
+	color: #fff;
+	font: 400 14px/31px "微软雅黑";
+}
+.dd h3 a{
+	color: #fff;
+	font: 400 14px/31px "微软雅黑";
+
+}
+.dd p{
+	color: #fff;
+	font: 400 9px/14px consolas;
+	padding-left: 10px;
+	position: absolute;
+	right: 12px;
+	top: 9px;
+	font-weight: 400;
 }
 .banner_1{
 	width: 730px;
@@ -2460,6 +2577,12 @@ word-break: break-all;
 	z-index: 3;
 
 }
+.jdm-toolbar-tabs li,.jdm-toolbar-footer li{
+	width: 41px;
+	height: 35px;
+	margin: 1px;
+	position: relative;
+}
 .jdm-toolbar-footer{
 	height: 72px;
 	width: 41px;
@@ -2477,25 +2600,44 @@ word-break: break-all;
     background-image: url(../image/toolbar.png);
     background-repeat: no-repeat;
     background-position: -50px 0;
+    position: absolute;
     z-index: 33;
+}
+.jdm-toolbar-tabs li:hover{
+	background-color:#c81623;
+}
+.jdm-toolbar-tabs li:hover div{
+	background-color:#c81623;
+}
+.jdm-toolbar-footer li:hover{
+	background-color:#c81623;
+}
+.jdm-toolbar-footer li:hover div{
+	background-color:#c81623;
 }
 #tabs_ico1{
 	 background-position: -50px -50px;
+
 }
 #tabs_ico2{
 	 background-position: -50px -100px;
+
 }
 #tabs_ico3{
 	 background-position: -190px -150px;
+
 }
 #tabs_ico4{
 	 background-position: -50px -150px;
+
 }
 #tabs_ico5{
 	 background-position: -50px -250px;
+
 }
 #tabs_ico6{
 	 background-position: -50px -300px;
+
 }
 .jdm-toolbar-tabss{
 	height: 180px;
@@ -2512,14 +2654,18 @@ word-break: break-all;
 	bottom: 0px;
 
 }
-.tabs_icos{
+.tab_text{
 	width: 62px;
-	height: 35px;	
-	margin-bottom: 1px;
-    background: #c81623;
-    border-radius: 2px;
-    z-index: 0;
-    
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	text-align: center;
+	background: #7a6e6e;
+	position: absolute;
+	top: 0px;
+	transition: all 0.5s ease-out;
+	cursor: pointer;
+
 }
 .floor1{
 	width: 30px;
@@ -2527,6 +2673,7 @@ word-break: break-all;
 	position: fixed;
 	left: 10px;
 	top: 0px;
+	display: none;
 }
 .floor1 li{
 width: 30px;
