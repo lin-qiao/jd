@@ -74,15 +74,15 @@ function moveL(){
 //////////////////////////////////////////////////
 
 
-var lunbo=function(win){
-var imgs=win.firstElementChild.children;
+function carousel(win){
+var imgs=$('.fn',win);
 var rou=$(".f1_slider",win);
 var harfL=$(".f1_harfL",win)[0];  
 var harfR=$(".f1_harfR",win)[0];
 var num=0;
 var flag=true;   //解决轮播快速显示bug 
 var index=0;
-var imgsW=parseInt(getStyle(imgs[0],"width"));  //获取图片宽度
+var imgsW=parseInt(getStyle(imgs[0],"width"));  //获取图片宽度   
 for(var i=0; i<imgs.length;i++){  
 	imgs[i].style.left=imgsW+"px";
 }
@@ -169,48 +169,15 @@ if(num<0){
 }
 
 }
-//1F轮播
-var win1f=$(".f1_banner")[0]    
-lunbo(win1f);
+//楼层轮播
+setTimeout(function  () {
+	var wins=$('.carousel');
+	for(var i=0 ;i<wins.length; i++){
+		carousel(wins[i]);
+	}
+},1000);
 
-//2f轮播
-var win2f=$('.ghmz_centra')[0];
-lunbo(win2f);
 
-//3f轮播
-var win3f=$('.sliderBan')[0];
-lunbo(win3f);
-
-//4f轮播
-var win4f=$('.sliderBanf4')[0];
-lunbo(win4f);
-
-//5f轮播
-var win5f=$('.sliderBanf5')[0];
-lunbo(win5f);
-
-//6f 轮播
-var win6f=$('.f6_banner')[0];
-lunbo(win6f);
-
-//7f 轮播
-var win7f=$('.f7_banner')[0];
-lunbo(win7f);
-
-var win8f=$('.f8_banner')[0];
-lunbo(win8f);
-
-var win9f=$('.f9_banner')[0];
-lunbo(win9f);
-
-var win10f=$('.sliderBanf10')[0];
-lunbo(win10f);
-
-var win11f=$('.sliderBanf11')[0];
-lunbo(win11f);
-
-var win11fb=$('.sliderBanf11b')[0];
-lunbo(win11fb);
 
 
 //节点轮播
@@ -317,24 +284,6 @@ for(var i=0;i<st.length;i++){
 var kaiguan=true;
 for(var i=0; i<lis.length;i++){
 	lis[i].index=i;
-	lis[i].onmouseover=function(){
-		for(var j=0; j<lis.length;j++){
-		et[j].style.display="none";
-		et[j].style.background="";
-		et[j].style.color="";
-		}
-		et[this.index].style.display="block";
-		et[this.index].style.background="#c81623";
-		et[this.index].style.color="#FFF";
-	}
-	lis[i].onmouseout=function(){
-		for(var j=0; j<lis.length;j++){
-		fs[j].style.display="block";
-		et[j].style.display="none";
-		et[j].style.background="";
-		et[j].style.color="";
-		}
-	}
 	lis[i].onclick=function(){
 		kaiguan=false;
 		animate(document.body,{scrollTop:floorarr[this.index]},function(){
@@ -343,13 +292,6 @@ for(var i=0; i<lis.length;i++){
 		animate(document.documentElement,{scrollTop:floorarr[this.index]},function(){
 			kaiguan=true;
 		});
-		for(var j=0;j<lis.length;j++){
-			fs[j].style.display="block";
-			et[j].style.display="none";
-		}
-		fs[this.index].style.display="none";
-		et[this.index].style.display="block";
-
 	}
 }
 var kg=true;
@@ -362,11 +304,11 @@ window.onscroll=function(){
 	for(var i=0;i<st.length;i++){
 		if(tops+pH>=floorarr[i]+100){
 			for(var j=0;j<st.length;j++){
-				fs[j].style.display="block";
-				et[j].style.display="none";
+				fs[j].classList.add('show');
+				et[j].classList.remove('show');
 			}
-			fs[i].style.display="none";
-			et[i].style.display="block";
+			fs[i].classList.remove('show');
+			et[i].classList.add('show');
 		}
 	}
 	if(tops>floorarr[0]){
@@ -424,4 +366,43 @@ for(var i=0;i<jli.length;i++){
 jli[0].onclick=function(){
 	var obj=document.body.scrollTop?document.body:document.documentElement;
        obj.scrollTop=0;
+}
+var close=$('.top_close')[0];
+var topimg=$('.top_banner')[0];
+close.onclick=function  () {
+	topimg.parentElement.removeChild(topimg);
+}
+
+//猜你喜欢
+var mc1=$('.mc1')[0];
+var mc11=$('.mc11');
+var extra=$('#extra2');
+mc11[0].style.display='block';
+extra.onclick=function  () {
+	var num=Math.floor(Math.random()*mc11.length);
+	for(var i =0 ;i<mc11.length;i++){
+		mc11[i].style.display='none';
+	}
+	mc11[num].style.display='block';
+}
+//楼层选项卡
+var floorOption=function  (obj) {
+	var tab=$('.tab-item',obj);
+	var main=$('.main',obj);
+	main[0].style.display='block';
+	for(var i =0; i < tab.length; i++){
+		tab[i].index=i;
+		tab[i].onmouseover=function () {
+			for(var j =0; j<tab.length; j++){
+				main[j].style.display='none';
+				tab[j].classList.remove('tab-selected');
+			}
+			main[this.index].style.display='block';
+			tab[this.index].classList.add('tab-selected');
+		}
+	}
+}
+var objs=$('.floor');
+for(var i=0 ; i < objs.length-1; i++){
+	floorOption(objs[i]);
 }
